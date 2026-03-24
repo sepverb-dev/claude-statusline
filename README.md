@@ -4,9 +4,9 @@ A minimal statusline script for [Claude Code](https://claude.ai/code) that displ
 
 ## Preview
 
-```
-[Sonnet 4.6] | 5h███░░░░░42%(19:07) | 7d█████░░░68%(3/28 11:00)
-```
+![Claude Code Statusline Preview](images/preview.png)
+
+`[Sonnet 4.6] | 5h███░░░░░42%(19:07) | 7d█████░░░68%(3/28 11:00)`
 
 - 5-hour rolling window usage + reset time
 - 7-day rolling window usage + reset date & time
