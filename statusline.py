@@ -28,7 +28,10 @@ def format_reset_time(resets_at, is_short_window):
     if not resets_at:
         return ""
     try:
-        dt = datetime.fromisoformat(resets_at.replace("Z", "+00:00")).astimezone(LOCAL_TZ)
+        if isinstance(resets_at, (int, float)):
+            dt = datetime.fromtimestamp(resets_at, tz=timezone.utc).astimezone(LOCAL_TZ)
+        else:
+            dt = datetime.fromisoformat(resets_at.replace("Z", "+00:00")).astimezone(LOCAL_TZ)
         if is_short_window:
             return f"{DIM_PURPLE}({dt.strftime('%H:%M')}){RESET}"
         else:
